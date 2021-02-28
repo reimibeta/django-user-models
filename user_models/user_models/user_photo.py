@@ -9,11 +9,13 @@ from image_utils.compress_image import compress_image
 class UserPhoto(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
     photo = models.ImageField(
-        upload_to='photos/users/{}/'.format(uuid.uuid4()),
+        # upload_to='photos/users/{}/'.format(uuid.uuid4()),
+        upload_to='photos/users/',
         null=True
     )
     thumbnail = models.ImageField(
-        upload_to='photos/users/thumbnails/{}/'.format(uuid.uuid4()),
+        # upload_to='photos/users/thumbnails/{}/'.format(uuid.uuid4()),
+        upload_to='photos/users/thumbnails/',
         blank=True, null=True,
         editable=False
     )
