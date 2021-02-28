@@ -2,7 +2,7 @@ from rest_flex_fields import FlexFieldsModelSerializer
 from rest_framework import serializers
 
 from .user_serializers import UserSerializer
-from ..base64_image_field import Base64ImageField
+from image_utils.base64_image_field import Base64ImageField
 from ..models import UserPhoto
 
 

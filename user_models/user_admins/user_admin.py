@@ -6,7 +6,7 @@ from ..user_admins.user_photo_admin import UserPhotoAdminInline
 from ..user_models.user import User
 from ..user_models.user_phone import UserPhone
 from ..user_models.user_photo import UserPhoto
-from ..render_image import RenderImage
+from image_utils.render_image import RenderImage
 
 
 class UserAdmin(admin.ModelAdmin):

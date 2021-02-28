@@ -3,12 +3,7 @@ from rest_framework.response import Response
 
 from ..user_models.user import User
 from ..user_serializers.user_serializers import UserSerializer
-from rest_framework.pagination import PageNumberPagination
-
-
-class StandardResultsSetPagination(PageNumberPagination):
-    page_size = 200
-    page_size_query_param = 'page_size'
+from rest_framework_utils.pagination import StandardResultsSetPagination
 
 
 class UserViewSet(viewsets.ModelViewSet):
