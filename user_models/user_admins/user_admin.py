@@ -11,7 +11,7 @@ from image_utils.render_image import RenderImage
 
 class UserAdmin(admin.ModelAdmin):
     list_display = ('name', 'image', 'email', 'phone_number', 'is_staff', 'is_superuser')
-
+    list_display_links = ['name', 'image',]
     # readonly_fields = ('password',)
 
     def image(self, obj):
