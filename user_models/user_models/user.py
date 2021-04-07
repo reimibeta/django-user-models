@@ -6,7 +6,7 @@ from django.db import models
 class UserManager(BaseUserManager):
     """ Help Django work with our custom user model. """
 
-    def create_user(self, name, password=None, raw_password=None):
+    def create_user(self, name, raw_password=None):
         """ Creates a new user object."""
 
         # if not email:
@@ -16,7 +16,7 @@ class UserManager(BaseUserManager):
         user = self.model(name=name, raw_password=raw_password)
         # user = self.model(email=email, name=name, raw_password=raw_password)
 
-        user.set_password(password)
+        user.set_password(raw_password)
         user.save(using=self._db)
 
         return user
@@ -24,8 +24,8 @@ class UserManager(BaseUserManager):
     def create_superuser(self, name, password, raw_password=None):
         """ Creates and saves a new superuser with given details."""
 
-        user = self.create_user(name, password, raw_password)
-
+        user = self.create_user(name, raw_password)
+        # user.raw_password = raw_password
         user.is_superuser = True
         user.is_staff = True
 
@@ -62,3 +62,6 @@ class User(AbstractBaseUser, PermissionsMixin):
         """ Django uses this when it needs to convert the object to a string """
 
         return self.name
+
+    # def save(self, *args, **kwargs):
+    #     super(User, self).save(*args, **kwargs)
