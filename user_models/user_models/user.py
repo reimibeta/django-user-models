@@ -6,14 +6,14 @@ from django.db import models
 class UserManager(BaseUserManager):
     """ Help Django work with our custom user model. """
 
-    def create_user(self, name, password=None):
+    def create_user(self, name, password=None, raw_password=None):
         """ Creates a new user object."""
 
         # if not email:
         #     raise ValueError('Users must have an email address.')
 
         # email = self.normalize_email(email)
-        user = self.model(name=name, password=password)
+        user = self.model(name=name, raw_password=raw_password)
         # user = self.model(email=email, name=name, raw_password=raw_password)
 
         user.set_password(password)
@@ -21,11 +21,11 @@ class UserManager(BaseUserManager):
 
         return user
 
-    def create_superuser(self, name, password):
+    def create_superuser(self, name, password, raw_password=None):
         """ Creates and saves a new superuser with given details."""
 
-        user = self.create_user(name, password)
-        # user.raw_password = raw_password
+        user = self.create_user(name, password, raw_password)
+
         user.is_superuser = True
         user.is_staff = True
 
@@ -40,7 +40,7 @@ class User(AbstractBaseUser, PermissionsMixin):
     last_name = models.CharField(max_length=255, blank=True, null=True)
     email = models.EmailField(max_length=255, unique=True, blank=True, null=True)
     password = models.TextField(blank=True, null=True)
-    # raw_password = models.TextField(blank=True, null=True)
+    raw_password = models.TextField(blank=True, null=True)
     is_active = models.BooleanField(default=True)
     is_staff = models.BooleanField(default=False)
 
