@@ -6,7 +6,6 @@ djangorestframework==3.12.4
 djangorestframework-simplejwt==4.6.0
 drf-flex-fields==0.8.9
 html-render-utils @ git+https://github.com/reimibeta/django-html-render-utils.git
-image-utils @ git+https://github.com/reimibeta/django-image-utils.git
 Pillow==8.2.0
 rest-framework-utils @ git+https://github.com/reimibeta/django-rest-framework-utils.git
 image-utils @ git+https://github.com/reimibeta/django-image-utils.git

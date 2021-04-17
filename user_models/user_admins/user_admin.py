@@ -6,7 +6,7 @@ from ..user_admins.user_photo_admin import UserPhotoAdminInline
 from ..user_models.user import User
 from ..user_models.user_phone import UserPhone
 from ..user_models.user_photo import UserPhoto
-from image_utils.render_image import RenderImage
+from image_utils.renders.render_image import render_image
 
 
 class UserAdmin(admin.ModelAdmin):
@@ -18,7 +18,7 @@ class UserAdmin(admin.ModelAdmin):
     def image(self, obj):
         image = UserPhoto.objects.filter(user=obj.id).first()
         if image:
-            return RenderImage.renderHtmlImage(image.thumbnail.url)
+            return render_image.render(image.thumbnail.url)
         else:
             return 'image not provided'
 
