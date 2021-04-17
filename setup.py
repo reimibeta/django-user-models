@@ -11,7 +11,7 @@ import setuptools
 
 setuptools.setup(
     name='user_models',
-    version='1.1.7',
+    version='1.1.8',
     packages=setuptools.find_packages(),
     # scripts=['makemigrations.py','migrate.py']
 )

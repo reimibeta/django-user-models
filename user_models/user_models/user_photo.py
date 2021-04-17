@@ -22,8 +22,8 @@ class UserPhoto(models.Model):
         if str(self.photo.path) == str(self.photo.file):
             print('return true when on new file uploaded!')
         else:
-            self.photo = compress_image.resize(700, self.photo)
-            self.thumbnail = compress_image.resize(300, self.photo)
+            self.photo = compress_image.resize(self.photo, 700)
+            self.thumbnail = compress_image.resize(self.photo, 300)
         super(UserPhoto, self).save(*args, **kwargs)
 
     def __str__(self):
