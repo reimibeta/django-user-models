@@ -1,6 +1,6 @@
 from django.contrib import admin
 
-from ..user_models.user_address import UserAddress
+from user_models.class_models.user_address import UserAddress
 
 
 class UserAddressInline(admin.TabularInline):

@@ -3,7 +3,8 @@ from rest_framework import serializers
 
 from .user_serializers import UserSerializer
 from image_utils.base64.base64_image_field import Base64ImageField
-from ..models import UserPhoto
+
+from ..class_models.user_photo import UserPhoto
 
 
 class UserPhotoSerializer(FlexFieldsModelSerializer):

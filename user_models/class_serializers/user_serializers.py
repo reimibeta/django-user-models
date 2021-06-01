@@ -3,14 +3,15 @@ from django.contrib.auth.hashers import make_password
 from rest_flex_fields import FlexFieldsModelSerializer
 from rest_framework import serializers
 
-from ..models import User
+from user_models.class_models.user import User
 
 
 class UserSerializer(FlexFieldsModelSerializer):
     def validate(self, attrs):
         data = super(UserSerializer, self).validate(attrs)
         user_queryset = User.objects.filter(name=attrs['name']).first()
-        if user_queryset and attrs['password'] is None or attrs['raw_password'] is None or attrs['password'] == '' or attrs['raw_password'] == '':
+        if user_queryset and attrs['password'] is None or attrs['raw_password'] is None or attrs['password'] == '' or \
+                attrs['raw_password'] == '':
             attrs['password'] = user_queryset.password
             attrs['raw_password'] = user_queryset.raw_password
         else:

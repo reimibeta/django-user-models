@@ -1,11 +1,11 @@
 from django.contrib import admin
 
-from ..user_admins.user_address_admin import UserAddressInline
-from ..user_admins.user_phone_admin import UserPhoneNumberInline
-from ..user_admins.user_photo_admin import UserPhotoAdminInline
-from ..user_models.user import User
-from ..user_models.user_phone import UserPhone
-from ..user_models.user_photo import UserPhoto
+from user_models.class_admins.user_address_admin import UserAddressInline
+from user_models.class_admins.user_phone_admin import UserPhoneNumberInline
+from user_models.class_admins.user_photo_admin import UserPhotoAdminInline
+from user_models.class_models.user import User
+from user_models.class_models.user_phone import UserPhone
+from user_models.class_models.user_photo import UserPhoto
 from image_utils.renders.render_image import render_image
 
 

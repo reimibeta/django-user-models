@@ -1,7 +1,7 @@
 from rest_framework import viewsets
 
-from ..user_models.user_photo import UserPhoto
-from ..user_serializers.user_photo_serializers import UserPhotoSerializer
+from user_models.class_models.user_photo import UserPhoto
+from user_models.class_serializers.user_photo_serializers import UserPhotoSerializer
 from rest_framework_utils.pagination import StandardResultsSetPagination
 
 

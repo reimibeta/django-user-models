@@ -1,8 +1,9 @@
 from rest_flex_fields import FlexFieldsModelSerializer
 from rest_framework import serializers
 
-from ..models import UserPhone, User
 from .user_serializers import UserSerializer
+from ..class_models.user import User
+from ..class_models.user_phone import UserPhone
 
 
 class UserPhoneSerializer(FlexFieldsModelSerializer):

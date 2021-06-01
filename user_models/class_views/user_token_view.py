@@ -2,7 +2,7 @@ from django.core import serializers
 from rest_framework_simplejwt.serializers import TokenObtainPairSerializer
 from rest_framework_simplejwt.views import TokenObtainPairView
 
-from ..user_models.user import User
+from user_models.class_models.user import User
 
 
 class UserTokenObtainPairSerializer(TokenObtainPairSerializer):

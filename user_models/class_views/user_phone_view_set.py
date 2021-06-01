@@ -1,23 +1,15 @@
 from rest_framework import viewsets, status
 from rest_framework.response import Response
 
-from ..user_models.user import User
-from ..user_serializers.user_serializers import UserSerializer
+from user_models.class_models.user_phone import UserPhone
+from user_models.class_serializers.user_phone_serializers import UserPhoneSerializer
 from rest_framework_utils.pagination import StandardResultsSetPagination
 
 
-class UserViewSet(viewsets.ModelViewSet):
-    """ Handles creating, creating and updating users. """
-
-    serializer_class = UserSerializer
-    queryset = User.objects.all()
+class UserPhoneNumberViewSet(viewsets.ModelViewSet):
+    queryset = UserPhone.objects.all()
+    serializer_class = UserPhoneSerializer
     pagination_class = StandardResultsSetPagination
-
-    # filter_backends = (filters.SearchFilter,)
-    # search_fields = ('name', 'email',)
-    # uncomment it when run production.
-    # permission_classes = (permissions.IsAuthenticatedOrReadOnly,)
-    # authentication_classes = [JWTAuthentication, ]
 
     def create(self, request, **kwargs):
         # obj = lambda: None
@@ -50,18 +42,3 @@ class UserViewSet(viewsets.ModelViewSet):
             serializer_dict = serializer.errors
             serializer_dict['success'] = False
             return Response(serializer_dict)
-
-    def get_queryset(self):
-        qs = super().get_queryset()
-        # print('Category: {}'.format(self.request.GET['category']))
-        if 'email' in self.request.GET:
-            request = self.request.GET['email']
-            # print(request)
-            user = User.objects.filter(email=request).first()
-            if user:
-                # return User.objects.filter(department=type.department)
-                return User.objects.filter(id=user.id)
-            else:
-                return []
-        else:
-            return qs
