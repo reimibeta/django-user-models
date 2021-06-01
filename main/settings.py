@@ -39,7 +39,7 @@ INSTALLED_APPS = [
     # django rest-framework
     'rest_framework',
     # user
-    'user_models.apps.UsersConfig',
+    'user_models.apps.UserConfig',
     # Clean-Up
     'django_cleanup.apps.CleanupConfig',  # should go after your apps
     # Filter

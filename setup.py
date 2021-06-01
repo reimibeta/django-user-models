@@ -11,7 +11,7 @@ import setuptools
 
 setuptools.setup(
     name='user_models',
-    version='1.2.0',
+    version='1.2.1',
     packages=setuptools.find_packages(),
     install_requires=[
         'image-utils @ git+https://github.com/reimibeta/django-image-utils.git',
