@@ -2,7 +2,7 @@ from rest_framework import viewsets
 
 from user_models.class_models.user_photo import UserPhoto
 from user_models.class_serializers.user_photo_serializers import UserPhotoSerializer
-from rest_framework_utils.pagination import StandardResultsSetPagination
+from django_rest_framework.pagination import StandardResultsSetPagination
 
 
 class UserPhotoViewSet(viewsets.ModelViewSet):

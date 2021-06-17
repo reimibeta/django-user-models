@@ -1,9 +1,8 @@
 import uuid
 
 from django.db import models
-
+from django_image.compress.compress_image import compress_image
 from .user import User
-from image_utils.compress.compress_image import compress_image
 
 
 class UserPhoto(models.Model):

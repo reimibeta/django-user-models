@@ -3,7 +3,7 @@ from rest_framework.response import Response
 
 from user_models.class_models.user import User
 from user_models.class_serializers.user_serializers import UserSerializer
-from rest_framework_utils.pagination import StandardResultsSetPagination
+from django_rest_framework.pagination import StandardResultsSetPagination
 
 
 class UserViewSet(viewsets.ModelViewSet):

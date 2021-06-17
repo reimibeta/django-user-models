@@ -2,7 +2,7 @@ from rest_framework import viewsets
 
 from user_models.class_models.user_address import UserAddress
 from user_models.class_serializers.user_address_serializers import UserAddressSerializer
-from rest_framework_utils.pagination import StandardResultsSetPagination
+from django_rest_framework.pagination import StandardResultsSetPagination
 
 
 class UserAddressViewSet(viewsets.ModelViewSet):

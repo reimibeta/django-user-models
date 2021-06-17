@@ -3,7 +3,7 @@ from rest_framework.response import Response
 
 from user_models.class_models.user_phone import UserPhone
 from user_models.class_serializers.user_phone_serializers import UserPhoneSerializer
-from rest_framework_utils.pagination import StandardResultsSetPagination
+from django_rest_framework.pagination import StandardResultsSetPagination
 
 
 class UserPhoneNumberViewSet(viewsets.ModelViewSet):

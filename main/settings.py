@@ -146,7 +146,7 @@ REST_FRAMEWORK = {
         # UnicodeJSONRenderer has an ensure_ascii = False attribute,
         # thus it will not escape characters.
         # 'rest_framework_utils.rest_framework.renders.UTF8JSONRender',
-        'rest_framework_utils.renders.UTF8JSONRender',
+        'django_rest_framework.renders.UTF8JSONRender',
         # You only need to keep this one if you're using the browsable API
         'rest_framework.renderers.BrowsableAPIRenderer',
     ),

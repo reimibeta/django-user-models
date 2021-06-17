@@ -6,7 +6,7 @@ from user_models.class_admins.user_photo_admin import UserPhotoAdminInline
 from user_models.class_models.user import User
 from user_models.class_models.user_phone import UserPhone
 from user_models.class_models.user_photo import UserPhoto
-from image_utils.renders.render_image import render_image
+from django_image.renders.render_image import render_image
 
 
 class UserAdmin(admin.ModelAdmin):

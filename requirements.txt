@@ -1,11 +1,11 @@
-datetime-utils @ git+https://github.com/reimibeta/django-datetime-utils.git
 Django==3.1.7
 django-admin-list-filter-dropdown==1.0.3
 django-cleanup==5.1.0
 djangorestframework==3.12.4
 djangorestframework-simplejwt==4.6.0
 drf-flex-fields==0.8.9
-html-render-utils @ git+https://github.com/reimibeta/django-html-render-utils.git
-image-utils @ git+https://github.com/reimibeta/django-image-utils.git
 Pillow==8.2.0
-rest-framework-utils @ git+https://github.com/reimibeta/django-rest-framework-utils.git
+django-datetime @ git+https://github.com/reimibeta/django-datetime.git@c72c75ca5f2a46895598dcc0ce78bf1127c0c40b
+django-html-render @ git+https://github.com/reimibeta/django-html-render.git@03de9608e80fd65bdbce4dbfa6dd7b5f555895a0
+django-image @ git+https://github.com/reimibeta/django-image-utils.git@ddfe248768f935947e61f4b8be17deaf64b6a09d
+django-rest-framework @ git+https://github.com/reimibeta/django-rest-framework.git@503852d3fda3717b0de0932a216d27caa668e743
