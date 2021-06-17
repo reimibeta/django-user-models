@@ -11,6 +11,6 @@ import setuptools
 
 setuptools.setup(
     name='user_models',
-    version='1.2.4',
+    version='1.2.5',
     packages=setuptools.find_packages()
 )
